@@ -12,8 +12,8 @@ Example usage:
 	cleengApi.enableSandbox(); // remove this line when going live
 
 	// you should retrieve the customerToken & offerId from the HTTP request
-	String customerToken = "BeJqweXLk_V1v62IJLEJlisjdflIJSJFaLDkfjFlsmjerOPl";
-	String offerId = "FsdfjsS_V1LSJDflijfn1232ejKj231hhfdsjf9qwjFDffh";
+	String customerToken = "JS-82A_mtlZlJMuuJHvkhnFo_4F1xHRcbqllOzdIO59m-adg";
+	String offerId = "P765685881_NL";
 
 	boolean isgranted = cleengApi.isAccessGranted(customerToken, offerId);
 	if(isgranted) {
@@ -53,7 +53,7 @@ have many optional fields.  For example "SingleOfferData" as parameter
 an empty object, then set all the fields you want to use in the API call.
 
 
-# Compiling the SDK
+## Compiling the SDK
 
 The Cleeng Java SDK uses jsonrpc4 to communicate with the JSON-RPC API.
 To build this SDK, you need Maven.  Run "mvn clean install" to do
@@ -64,9 +64,10 @@ cleeng-java-sdk-apiv3-1.0-jar-with-dependencies.jar (maybe with a
 higher version number than 1.0) somewhere in your Maven install directory
 ($HOME/.m2/ for example).
 
-You can compile the example program as follows:
+You can compile the example program as follows (from the "src/" directory):
 
-javac -cp cleeng-java-sdk-apiv3-1.0-jar-with-dependencies.jar CleengApiExample.java
+javac -cp path/to/cleeng-java-sdk-apiv3-1.0-jar-with-dependencies.jar CleengApiExample.java
 
-And run it:
-java -cp cleeng-java-sdk-apiv3-1.0-jar-with-dependencies.jar:. CleengApiExample
+And run it (again from "src/"):
+
+java -cp path/to/cleeng-java-sdk-apiv3-1.0-jar-with-dependencies.jar:. CleengApiExample
