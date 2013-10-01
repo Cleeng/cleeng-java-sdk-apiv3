@@ -12,6 +12,7 @@ public abstract class BaseOffer {
 	public double price;
 	public String applicableTaxRate;
 	public String currency;
+	public String country;
 	public boolean active;
 	public long createdAt;
 	public long updatedAt;
