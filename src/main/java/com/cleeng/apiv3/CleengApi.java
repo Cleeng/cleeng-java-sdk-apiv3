@@ -301,6 +301,13 @@ public class CleengApi {
 				@JsonRpcParam(value="distributorToken") String distributorToken,
 				@JsonRpcParam(value="associateEmail") String associateEmail,
 				@JsonRpcParam(value="associateData") AssociateData associateData);
+                
+                // Reporting
+                TransactionItems listTransactions(
+                        @JsonRpcParam(value="publisherToken") String publisherToken,
+				@JsonRpcParam(value="criteria") TransactionCriteria criteria,
+				@JsonRpcParam(value="offset") int offset,
+				@JsonRpcParam(value="limit") int limit);
 		
 	}
 
@@ -591,4 +598,9 @@ public class CleengApi {
 	public Associate updateAssociate(String distributorToken, String associateEmail, AssociateData associateData) {
 		return rpc.updateAssociate(distributorToken, associateEmail, associateData);
 	}
+                
+        // Reporting
+        public TransactionItems listTransactions(String publisherToken, TransactionCriteria criteria, int offset, int limit) {            
+            return rpc.listTransactions(publisherToken, criteria, offset, limit);
+        }                
 }
