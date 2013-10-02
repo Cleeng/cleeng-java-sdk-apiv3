@@ -10,4 +10,5 @@ public class AccessStatus implements Serializable {
 	public String grantType;
 	public Long expiresAt;
 	public String socialCommissionUrl;
+	public boolean purchasedDirectly;
 }
