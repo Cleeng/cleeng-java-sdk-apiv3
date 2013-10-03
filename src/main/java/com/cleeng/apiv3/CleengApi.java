@@ -8,6 +8,8 @@ import com.googlecode.jsonrpc4j.JsonRpcParam;
 import com.googlecode.jsonrpc4j.ProxyUtil;
 
 import com.cleeng.apiv3.domain.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CleengApi {
 
@@ -311,16 +313,20 @@ public class CleengApi {
 		
 	}
 
-	public CleengApi() throws MalformedURLException {
+	public CleengApi() {
 		makeRpc("https://api.cleeng.com/3.0/json-rpc");
 	}
 
-	private void makeRpc(String apiUrl) throws MalformedURLException {
-		JsonRpcHttpClient client = new JsonRpcHttpClient(new URL(apiUrl));
-		rpc = ProxyUtil.createProxy(getClass().getClassLoader(), CleengRpc.class, client);
+	private void makeRpc(String apiUrl) {
+            try {
+                JsonRpcHttpClient client = new JsonRpcHttpClient(new URL(apiUrl));
+                rpc = ProxyUtil.createProxy(getClass().getClassLoader(), CleengRpc.class, client);
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(CleengApi.class.getName()).log(Level.SEVERE, null, ex);
+            }
 	}
 
-	public void enableSandbox() throws MalformedURLException {
+	public void enableSandbox() {
 		makeRpc("https://sandbox.cleeng.com/api/3.0/json-rpc");
 	}
 
