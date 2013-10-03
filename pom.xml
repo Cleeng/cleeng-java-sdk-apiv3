@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cleeng</groupId>
 	<artifactId>cleeng-java-sdk-apiv3</artifactId>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>Cleeng API v3 Java SDK</name>
 
 	<repositories>
