@@ -12,4 +12,5 @@ public class CustomerData implements Serializable {
 	public String locale;
 	public String currency;
 	public String country;
+        public Boolean emailVerified;
 }
