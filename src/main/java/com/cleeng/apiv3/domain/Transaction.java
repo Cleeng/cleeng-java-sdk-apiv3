@@ -9,6 +9,7 @@ public class Transaction implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public String transactionId;
+    public String transactionExternalData;
     public String offerId;
     public String offerType;
     public String transactionType;
