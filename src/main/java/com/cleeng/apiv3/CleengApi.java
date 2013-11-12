@@ -310,7 +310,15 @@ public class CleengApi {
                         @JsonRpcParam(value="customerEmail") String customerEmail,
                         @JsonRpcParam(value="couponCode") String couponCode,
                         @JsonRpcParam(value="offerId") String offerId);
-                
+
+                // Coupons
+                Success applyCoupon(
+                        @JsonRpcParam(value="publisherToken") String publisherToken,
+                        @JsonRpcParam(value="customerEmail") String customerEmail,
+                        @JsonRpcParam(value="couponCode") String couponCode,
+                        @JsonRpcParam(value="offerId") String offerId,
+                        @JsonRpcParam(value="couponOptions") CouponOptions couponOptions);
+                                
                 // Reporting
                 TransactionItems listTransactions(
                         @JsonRpcParam(value="publisherToken") String publisherToken,
@@ -615,6 +623,10 @@ public class CleengApi {
         // Coupons
         public Success applyCoupon(String publisherToken, String customerEmail, String couponCode, String offerId) {
             return rpc.applyCoupon(publisherToken, customerEmail, couponCode, offerId);
+        }
+        
+        public Success applyCoupon(String publisherToken, String customerEmail, String couponCode, String offerId, CouponOptions couponOptions) {
+            return rpc.applyCoupon(publisherToken, customerEmail, couponCode, offerId, couponOptions);
         }
         
         // Reporting
