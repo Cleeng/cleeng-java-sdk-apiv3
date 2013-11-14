@@ -326,6 +326,13 @@ public class CleengApi {
 				@JsonRpcParam(value="offset") int offset,
 				@JsonRpcParam(value="limit") int limit);
 		
+                CustomerLibraryItems listCustomerLibrary(
+                        @JsonRpcParam(value="publisherToken") String publisherToken,
+                                @JsonRpcParam(value="customerEmail") String customerEmail,
+				@JsonRpcParam(value="criteria") CustomerLibraryCriteria criteria,
+				@JsonRpcParam(value="offset") int offset,
+				@JsonRpcParam(value="limit") int limit);
+		
 	}
 
 	public CleengApi() {
@@ -632,5 +639,8 @@ public class CleengApi {
         // Reporting
         public TransactionItems listTransactions(String publisherToken, TransactionCriteria criteria, int offset, int limit) {            
             return rpc.listTransactions(publisherToken, criteria, offset, limit);
+        }                
+        public CustomerLibraryItems listCustomerLibrary(String publisherToken, String customerEmail, CustomerLibraryCriteria criteria, int offset, int limit) {            
+            return rpc.listCustomerLibrary(publisherToken, customerEmail, criteria, offset, limit);
         }                
 }
