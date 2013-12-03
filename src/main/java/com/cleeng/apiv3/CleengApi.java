@@ -305,14 +305,14 @@ public class CleengApi {
 				@JsonRpcParam(value="associateData") AssociateData associateData);
 
                 // Coupons
-                Success applyCoupon(
+                Success grantAccessWithCoupon(
                         @JsonRpcParam(value="publisherToken") String publisherToken,
                         @JsonRpcParam(value="customerEmail") String customerEmail,
                         @JsonRpcParam(value="couponCode") String couponCode,
                         @JsonRpcParam(value="offerId") String offerId);
 
                 // Coupons
-                Success applyCoupon(
+                Success grantAccessWithCoupon(
                         @JsonRpcParam(value="publisherToken") String publisherToken,
                         @JsonRpcParam(value="customerEmail") String customerEmail,
                         @JsonRpcParam(value="couponCode") String couponCode,
@@ -628,12 +628,12 @@ public class CleengApi {
 	}
 
         // Coupons
-        public Success applyCoupon(String publisherToken, String customerEmail, String couponCode, String offerId) {
-            return rpc.applyCoupon(publisherToken, customerEmail, couponCode, offerId);
+        public Success grantAccessWithCoupon(String publisherToken, String customerEmail, String couponCode, String offerId) {
+            return rpc.grantAccessWithCoupon(publisherToken, customerEmail, couponCode, offerId);
         }
         
-        public Success applyCoupon(String publisherToken, String customerEmail, String couponCode, String offerId, CouponOptions couponOptions) {
-            return rpc.applyCoupon(publisherToken, customerEmail, couponCode, offerId, couponOptions);
+        public Success grantAccessWithCoupon(String publisherToken, String customerEmail, String couponCode, String offerId, CouponOptions couponOptions) {
+            return rpc.grantAccessWithCoupon(publisherToken, customerEmail, couponCode, offerId, couponOptions);
         }
         
         // Reporting
