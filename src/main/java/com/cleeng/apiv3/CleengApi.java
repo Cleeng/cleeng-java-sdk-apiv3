@@ -339,7 +339,7 @@ public class CleengApi {
 		makeRpc("https://api.cleeng.com/3.0/json-rpc");
 	}
 
-	private void makeRpc(String apiUrl) {
+	protected void makeRpc(String apiUrl) {
             try {
                 JsonRpcHttpClient client = new JsonRpcHttpClient(new URL(apiUrl));
                 rpc = ProxyUtil.createProxy(getClass().getClassLoader(), CleengRpc.class, client);
