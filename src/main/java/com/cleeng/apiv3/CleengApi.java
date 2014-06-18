@@ -347,6 +347,10 @@ public class CleengApi {
                 Logger.getLogger(CleengApi.class.getName()).log(Level.SEVERE, null, ex);
             }
 	}
+	
+	protected void setCleengRpc(CleengRpc rpc) {
+		this.rpc = rpc;
+	}
 
 	public void enableSandbox() {
 		makeRpc("https://sandbox.cleeng.com/api/3.0/json-rpc");
