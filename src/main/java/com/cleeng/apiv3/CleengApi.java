@@ -339,17 +339,18 @@ public class CleengApi {
 		makeRpc("https://api.cleeng.com/3.0/json-rpc");
 	}
 
-	protected void makeRpc(String apiUrl) {
+	private void makeRpc(String apiUrl) {
             try {
                 JsonRpcHttpClient client = new JsonRpcHttpClient(new URL(apiUrl));
+				configure(client);
                 rpc = ProxyUtil.createProxy(getClass().getClassLoader(), CleengRpc.class, client);
             } catch (MalformedURLException ex) {
                 Logger.getLogger(CleengApi.class.getName()).log(Level.SEVERE, null, ex);
             }
 	}
 	
-	protected void setCleengRpc(CleengRpc rpc) {
-		this.rpc = rpc;
+	protected void configure(JsonRpcHttpClient client) {
+		
 	}
 
 	public void enableSandbox() {
