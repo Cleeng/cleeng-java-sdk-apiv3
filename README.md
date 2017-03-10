@@ -1,3 +1,6 @@
+#THIS REPO IS DEPRECATED
+##New sdk can be found at [https://github.com/Cleeng/cleeng-java-sdk](https://github.com/Cleeng/cleeng-java-sdk)
+
 # Cleeng API v3 Java SDK
 
 Example usage:
